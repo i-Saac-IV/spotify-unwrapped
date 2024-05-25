@@ -11,13 +11,16 @@ MIN_PLAYTIME_S = 30
 TOP_N = 50
 ```
 ## To do
-
+- [] Probably not a lot, this is just a side project...
 
 # Usage
 ## Setup
 - Download your extented listening history from spotfiy and extract the .json files to be in the same directory as the [main.py](main.py) file.
 - Run the [main.py](main.py) file input the dates that you'd like to display data to and from.
 
+## Example Graphs
+![example-1.png](/images/example-1.png)
+![example-2.png](/images/example-2.png)
 
 ## Bugs fixes and updates
 Once I'm happy with the state of this project, it will likely not be updated much. So updates past this point will be very sporadic.
