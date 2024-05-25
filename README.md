@@ -15,7 +15,7 @@ TOP_N = 50
 
 # Usage
 ## Setup
-- Download your extented listening history from spotfiy and extract the .json files to be in the same directory as the [main.py](main.py) file.
+- Download your extented listening history from [spotfiy](https://www.spotify.com/us/account/privacy) and extract the .json files to be in the same directory as the [main.py](main.py) file.
 - Run the [main.py](main.py) file input the dates that you'd like to display data to and from.
 
 ## Example Graphs
