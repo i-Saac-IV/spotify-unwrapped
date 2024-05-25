@@ -11,7 +11,7 @@ MIN_PLAYTIME_S = 30
 TOP_N = 50
 ```
 ## To do
-- [] Probably not a lot, this is just a side project...
+- [x] Probably not a lot, this is just a side project...
 
 # Usage
 ## Setup
