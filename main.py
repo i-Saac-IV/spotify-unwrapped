@@ -16,6 +16,9 @@ END_DATE_STR    = '31-01-2025'
 START_DATE_STR = input("Input start date (DD-MM-YYYY): ")
 END_DATE_STR = input("Input end date (DD-MM-YYYY): ")
 
+#for testing
+#START_DATE_STR = "01-01-2000"
+#END_DATE_STR = "31-12-2025"
 
 # Function to parse date from string
 def parse_date(date_str):
@@ -197,6 +200,22 @@ def graph_playtime_by_hour(hourly_playtime, title):
     ax.set_theta_direction(-1)
     ax.set_title(title)
     plt.show()
+
+def export_unique_tracks(tracks, filename):
+    """Export unique tracks to a file."""
+    unique_tracks = set((track['master_metadata_track_name'], track['master_metadata_album_artist_name'], track['master_metadata_album_album_name']) for track in tracks)
+    with open(filename, 'w', encoding='utf-8') as file:
+        for track_info in unique_tracks:
+            file.write(f"{track_info[0]}*& {track_info[1]}@% {track_info[2]}\n")
+
+# Process all JSON files in the directory
+for filename in os.listdir('.'):
+    if filename.endswith('.json'):
+        with open(filename, 'r', encoding='utf-8') as file:
+            tracks = json.load(file)
+        
+        # Export unique tracks to a file
+        export_unique_tracks(tracks, f'tracks_{START_DATE_STR}_{END_DATE_STR}.txt')
 
 graph_playtime_by_hour(all_hourly_playtime, f"Time of listening ({START_DATE_STR} - {END_DATE_STR})")
 graph_most_played(all_track_playtime, f"Top {TOP_N} tracks based on listening duration ({START_DATE_STR} - {END_DATE_STR})", 'Playtime (hours)',  True)
